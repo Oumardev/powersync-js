@@ -31,6 +31,12 @@ export type SupabaseConnectorListener = {
   sessionStarted: (session: Session) => void;
 };
 
+console.log({
+  supabaseUrl: import.meta.env.VITE_SUPABASE_URL,
+  powersyncUrl: import.meta.env.VITE_POWERSYNC_URL,
+  supabaseAnonKey: import.meta.env.VITE_SUPABASE_ANON_KEY
+})
+
 export class SupabaseConnector extends BaseObserver<SupabaseConnectorListener> implements PowerSyncBackendConnector {
   readonly client: SupabaseClient;
   readonly config: SupabaseConfig;
